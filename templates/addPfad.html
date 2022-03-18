@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add One User</title>
+</head>
+<body>
+    <h3>Please keep in mind that any data must be separated with single spacebar</h3>
+    <form action="/{{.AddPfad}}" method="PUT" id="form">
+        <label for="besteller">YOUR PERSONAL NUMBER</label><br>
+        <input type="text" name="besteller"><br>
+        <label for="ids">IDS which should be modified</label><br>
+        <input type="text" name="ids"><br>
+        <label for="ids">PFADS which should be granted</label><br>
+        <input type="text" name="pfads"><br>
+        <input type="submit">
+    </form>
+</body>
+<script src="/statics/{{.AddPfad}}.js"></script>
+</html>
