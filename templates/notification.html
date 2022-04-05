@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification</title>
+</head>
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+<body>
+    {{ template "headHTML" . }}
+    <h2>List of tasks to accept/deny</h2>
+    <div>
+        <table style="width: 100%;">
+            <tr>
+                <th>Confirm</th>
+                <th>Deny</th>
+                <th>Issuer(s)</th>
+                <th>Action</th>
+                <th>Data</th>
+                <th>ID</th>
+            </tr>
+        {{ range $key, $value := .Tasks }}
+        <tr>
+            <td><form method="PUT" class="form1" action="http://localhost:4000/genehmigen/{{index $value 0}}"><input type="submit" value="Accept"></form></td>
+            <td><form method="DELETE" class="form2" action="http://localhost:4000/deny/{{index $value 0}}"><input type="submit" value="Deny"></form></td>
+            <td>{{index $value 3}}</td>
+            <td>{{index $value 1}}</td>
+            <td>{{index $value 2}}</td>
+            <td>{{index $value 0}}</td>
+        </tr>
+        {{end}}
+    </table>
+    </div>
+</body>
+<script src="/statics/{{.Notification}}.js"></script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    {{ template "headHTML" . }}
+    <h3>Login</h3>
+    <form action="POST" id="form">
+        <label for="email">Enter email</label><br>
+        <input type="text" name="email"><br>
+        <label for="password">Enter password</label><br>
+        <input type="text" name="password"><br>
+        <input type="submit">
+    </form>
+</body>
+<script src="/statics/{{.Login}}.js"></script>
+</html>

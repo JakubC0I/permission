@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Image</title>
+</head>
+<body>
+    {{ template "headHTML" . }}
+    <h1>Add Image</h1>
+    <form action="POST" id="form">
+        <label for="title">Title of the ticket</label>
+        <input type="text" name="title" id="title"><br>
+        <label for="description">Description of the ticket</label>
+        <input type="text" name="description" id="description"><br>
+        <label for="article">Article used</label>
+        <input type="text" name="article" id="article"><br>
+        <input type="file" name="file" multiple><br>
+        <input type="submit">
+    </form>
+    <div id="imagesDiv">
+        
+    </div>
+</body>
+<script src="/statics/{{.AddImage}}.js"></script>
+</html>

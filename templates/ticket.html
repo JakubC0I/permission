@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {{template "headHTML" .}}
+    <h2>TICKET NUMBER: {{.ID}}</h2>
+    <div id="ticketBody">
+        <h3>{{.Title}}</h3>
+        <p>{{.Description}}</p>
+        {{ range $key, $value := .Images}}
+        <img src="{{$value}}"><br>
+        {{end}}
+        {{.Article}}
+        {{if eq .Description "No records"}}
+        <h4>Try searching for your ticket</h4>
+        <form action="/search" method="POST" id="sForm">
+            <input type="text" name="searchbar">
+            <input type="submit">
+        </form>
+        <div id="incidents">
+
+        </div>
+        {{else}}
+        <div id="ticketComments">
+            <h5>Comments:</h5>
+            {{ range $key, $value := .Comments}}
+            <p>{{$value}}</p>
+            {{end}}
+            <form action="POST" id="form">
+                <label for="commentField">Write comment to the ticket</label><br>
+                <input type="text" id="commentField"><br>
+                <input type="submit">
+            </form>
+        </div>
+        {{end}}
+    </div>
+</body>
+<script src="/statics/{{.Ticket}}.js"></script>
+
+</html>
