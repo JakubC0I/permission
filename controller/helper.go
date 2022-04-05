@@ -27,7 +27,7 @@ import (
 
 //connect to MongoDb
 
-const connectionString = "mongodb+srv://jakub_user:ck3YJrce9rtuPRdj@cluster0.vdtkf.mongodb.net/GolangDatabase?retryWrites=true&w=majority"
+const connectionString = "mongodb+srv://XXX?retryWrites=true&w=majority"
 
 // const connectionString = "mongodb://jakub_user:jakub123@127.0.0.1:27017"
 const dbName = "GolangDatabase"

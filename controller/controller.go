@@ -297,7 +297,7 @@ func addTicketImage(payload *bytes.Buffer, s []byte, images chan<- string) {
 		fmt.Println("Forming request")
 		panic(err)
 	}
-	req.Header.Add("Authorization", "Client-ID 5dc2c8848f66984")
+	req.Header.Add("Authorization", "Client-ID XXX")
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	res, err := client.Do(req)
 	if err != nil {
